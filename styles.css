@@ -177,6 +177,12 @@
   .svc-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,32,20,.93) 0%,rgba(20,45,28,.82) 55%,rgba(20,45,28,.62) 100%),var(--hero-img,url('assets/hero.jpg')) center/cover;z-index:0}
   .svc-hero .wrap{position:relative;z-index:1}
   .svc-hero .eyebrow{color:var(--gold)}
+  .svc-hero-lg{min-height:560px;display:flex;align-items:center;padding:110px 0}
+  .svc-hero-lg h1{font-size:68px;max-width:900px}
+  .svc-hero-lg h1 span{color:var(--gold)}
+  .svc-hero-lg p{max-width:700px;font-size:20px;color:#e9efe9;margin-bottom:32px}
+  .svc-hero-lg .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  @media(max-width:560px){.svc-hero-lg h1{font-size:44px}}
   .svc-hero h1{font-size:54px;margin-bottom:14px}
   .svc-hero .crumb{font-size:14px;color:#c7d3c9;margin-bottom:18px}
   .svc-hero .crumb a{color:#c7d3c9}
