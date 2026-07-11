@@ -51,6 +51,17 @@
   .nav-cta{display:flex;align-items:center;gap:18px}
   .nav-phone{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--green)}
   .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--green)}
+  /* Services dropdown */
+  .has-dd{position:relative}
+  .has-dd>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .has-dd>a::after{content:"\25BE";font-size:10px;transition:.2s}
+  .has-dd:hover>a::after{transform:rotate(180deg)}
+  .dd{position:absolute;top:100%;left:0;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 24px 50px rgba(20,45,28,.16);padding:26px 28px;width:600px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;z-index:60}
+  .has-dd::before{content:"";position:absolute;top:100%;left:0;height:14px;width:100%}
+  .has-dd:hover .dd{opacity:1;visibility:visible;transform:translateY(0)}
+  .dd-col h5{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-size:15px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
+  .dd-col a{display:block;padding:7px 0;font-size:14.5px;font-weight:500;color:var(--ink)}
+  .dd-col a:hover{color:var(--gold);padding-left:3px}
 
   /* Hero */
   .hero{position:relative;min-height:640px;display:flex;align-items:center;color:#fff;padding:120px 0}
@@ -161,6 +172,8 @@
     .nav-links{display:none}
     .menu-btn{display:block}
     .nav-links.open{display:flex;flex-direction:column;position:absolute;top:82px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);gap:18px}
+    .has-dd .dd{position:static;opacity:1;visibility:visible;transform:none;width:auto;grid-template-columns:1fr;gap:14px;box-shadow:none;border:0;padding:10px 0 0;margin-top:8px}
+    .has-dd>a::after{display:none}
   }
   @media(max-width:560px){
     .svc-cols,.proj-grid,.steps,.stats-grid,.row2,.foot-grid{grid-template-columns:1fr}
@@ -177,7 +190,32 @@
     <a class="brand" href="#top"><img src="assets/logo.jpeg" alt="HigneyBuilt, Inc. logo" /></a>
     <nav class="nav-links" id="navLinks">
       <a href="#about">About</a>
-      <a href="#services">Services</a>
+      <div class="has-dd">
+        <a href="#services">Services</a>
+        <div class="dd">
+          <div class="dd-col">
+            <h5>Construction &amp; Building</h5>
+            <a href="#services">Residential Construction</a>
+            <a href="#services">Commercial Construction</a>
+            <a href="#services">Custom Homes</a>
+            <a href="#services">Additions &amp; New Builds</a>
+          </div>
+          <div class="dd-col">
+            <h5>Remodel &amp; Renovation</h5>
+            <a href="#services">Kitchen Remodeling</a>
+            <a href="#services">Bathroom Remodeling</a>
+            <a href="#services">Whole-Home Renovations</a>
+            <a href="#services">Tenant Improvements</a>
+          </div>
+          <div class="dd-col">
+            <h5>Planning &amp; Delivery</h5>
+            <a href="#services">Design-Build</a>
+            <a href="#services">Project Management</a>
+            <a href="#services">Pre-Construction Planning</a>
+            <a href="#services">Permit Coordination</a>
+          </div>
+        </div>
+      </div>
       <a href="#projects">Projects</a>
       <a href="#process">Process</a>
       <a href="#contact">Contact</a>
