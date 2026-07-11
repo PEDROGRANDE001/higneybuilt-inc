@@ -8,180 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --green:#1f4a2c;
-    --green-dark:#163821;
-    --green-light:#2f6b40;
-    --gold:#c9a24b;
-    --ink:#1a1f1c;
-    --grey:#5f6b63;
-    --line:#e4e8e5;
-    --bg:#ffffff;
-    --bg-soft:#f5f7f5;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-  h1,h2,h3,.display{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.05;letter-spacing:.3px;text-transform:uppercase}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-  .btn{display:inline-block;padding:15px 30px;font-weight:600;border-radius:4px;font-size:15px;transition:.2s;cursor:pointer;border:2px solid transparent}
-  .btn-primary{background:var(--gold);color:#1a1f1c}
-  .btn-primary:hover{background:#b8923f}
-  .btn-ghost{border-color:#ffffff;color:#fff}
-  .btn-ghost:hover{background:#fff;color:var(--green)}
-  .btn-dark{background:var(--green);color:#fff}
-  .btn-dark:hover{background:var(--green-dark)}
-  .eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:3px;font-weight:600;color:var(--gold);font-size:15px;margin-bottom:14px}
-  section{padding:86px 0}
-  .section-head{max-width:720px;margin-bottom:52px}
-  .section-head h2{font-size:44px;color:var(--green)}
-  .section-head p{margin-top:16px;color:var(--grey);font-size:18px}
-
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:82px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{height:52px;width:auto}
-  .nav-links{display:flex;gap:30px;align-items:center}
-  .nav-links a{font-weight:500;font-size:15px;color:var(--ink)}
-  .nav-links a:hover{color:var(--green)}
-  .nav-cta{display:flex;align-items:center;gap:18px}
-  .nav-phone{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--green)}
-  .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--green)}
-  /* Services dropdown */
-  .has-dd{position:relative}
-  .has-dd>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-  .has-dd>a::after{content:"\25BE";font-size:10px;transition:.2s}
-  .has-dd:hover>a::after{transform:rotate(180deg)}
-  .dd{position:absolute;top:100%;left:0;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 24px 50px rgba(20,45,28,.16);padding:26px 28px;width:600px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;z-index:60}
-  .has-dd::before{content:"";position:absolute;top:100%;left:0;height:14px;width:100%}
-  .has-dd:hover .dd{opacity:1;visibility:visible;transform:translateY(0)}
-  .dd-col h5{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-size:15px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
-  .dd-col a{display:block;padding:7px 0;font-size:14.5px;font-weight:500;color:var(--ink)}
-  .dd-col a:hover{color:var(--gold);padding-left:3px}
-
-  /* Hero */
-  .hero{position:relative;min-height:640px;display:flex;align-items:center;color:#fff;padding:120px 0}
-  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(15,32,20,.9) 0%,rgba(20,45,28,.72) 55%,rgba(20,45,28,.45) 100%),url('assets/hero.jpg') center/cover;z-index:-1}
-  .hero-inner{max-width:760px}
-  .hero h1{font-size:70px;margin-bottom:22px}
-  .hero h1 span{color:var(--gold)}
-  .hero p{font-size:20px;max-width:620px;margin-bottom:34px;color:#e9efe9}
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
-
-  /* Trust strip */
-  .trust{background:var(--green);color:#fff;padding:0}
-  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-top:26px;padding-bottom:26px}
-  .trust div{display:flex;align-items:center;gap:10px;font-weight:500;font-size:15px}
-  .trust strong{font-family:'Barlow Condensed',sans-serif;font-size:19px;letter-spacing:.5px}
-  .trust .dot{color:var(--gold);font-size:20px}
-
-  /* About */
-  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-  .about-grid img{border-radius:8px;box-shadow:0 24px 50px rgba(20,45,28,.18)}
-  .about-copy h2{font-size:44px;color:var(--green);margin-bottom:18px}
-  .about-copy p{color:var(--grey);margin-bottom:16px;font-size:17px}
-  .values{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
-  .value-chip{background:var(--bg-soft);border:1px solid var(--line);border-radius:40px;padding:9px 20px;font-weight:600;color:var(--green);font-size:14px}
-
-  /* Services */
-  .services{background:var(--bg-soft)}
-  .svc-intro{max-width:760px;margin-bottom:48px}
-  .svc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;padding-bottom:56px;border-bottom:1px solid var(--line)}
-  .svc-col h3{font-size:24px;color:var(--green);margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--gold);display:inline-block}
-  .svc-col ul{list-style:none}
-  .svc-col ul li{margin-bottom:13px}
-  .svc-col ul li a{display:flex;align-items:center;gap:10px;font-size:16.5px;font-weight:500;color:var(--ink);transition:.15s}
-  .svc-col ul li a::before{content:"\203A";color:var(--gold);font-size:20px;font-weight:700;line-height:1}
-  .svc-col ul li a:hover{color:var(--green);padding-left:4px}
-  .svc-cta{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:52px;flex-wrap:wrap}
-  .svc-cta h3{font-size:34px;color:var(--green);max-width:560px}
-  .svc-cta .acts{display:flex;gap:14px;flex-wrap:wrap}
-
-  /* Stats */
-  .stats{background:var(--green-dark);color:#fff}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
-  .stat h3{font-size:58px;color:var(--gold)}
-  .stat p{font-weight:500;letter-spacing:.5px;color:#d5e0d8;margin-top:6px}
-
-  /* Projects */
-  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-  .proj{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
-  .proj .ph{height:250px;overflow:hidden}
-  .proj .ph img{height:100%;width:100%;object-fit:cover;transition:.4s}
-  .proj:hover .ph img{transform:scale(1.06)}
-  .proj-body{padding:24px}
-  .proj-body .tag{color:var(--gold);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase}
-  .proj-body h3{font-size:22px;color:var(--green);margin:8px 0 8px}
-  .proj-body p{color:var(--grey);font-size:15px}
-
-  /* Process */
-  .process{background:var(--bg-soft)}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-  .step{position:relative;padding-top:14px}
-  .step .num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:64px;color:#dbe4dd;line-height:1}
-  .step h3{font-size:21px;color:var(--green);margin:6px 0 10px}
-  .step p{color:var(--grey);font-size:15px}
-
-  /* FAQ */
-  .faq-list{max-width:840px;margin:0 auto}
-  .faq{border:1px solid var(--line);border-radius:8px;margin-bottom:14px;overflow:hidden;background:#fff}
-  .faq summary{list-style:none;cursor:pointer;padding:22px 26px;font-weight:600;font-size:18px;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";font-size:26px;color:var(--gold);font-weight:400}
-  .faq[open] summary::after{content:"\2013"}
-  .faq p{padding:0 26px 24px;color:var(--grey)}
-
-  /* Contact */
-  .contact{background:var(--green);color:#fff}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-  .contact-info h2{font-size:44px;margin-bottom:18px}
-  .contact-info p.lead{color:#dbe6dd;font-size:18px;margin-bottom:30px}
-  .cinfo-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
-  .cinfo-row .ic{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-  .cinfo-row strong{font-family:'Barlow Condensed',sans-serif;font-size:19px;display:block;letter-spacing:.5px}
-  .cinfo-row a,.cinfo-row span{color:#dbe6dd}
-  form{background:#fff;border-radius:12px;padding:34px;color:var(--ink)}
-  form h3{color:var(--green);font-size:26px;margin-bottom:18px}
-  .field{margin-bottom:16px}
-  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--grey)}
-  .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:6px;font-family:inherit;font-size:15px;background:var(--bg-soft)}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
-  /* Footer */
-  footer{background:var(--green-dark);color:#c7d3c9;padding:60px 0 30px}
-  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:40px}
-  .foot-brand img{height:56px;background:#fff;padding:8px 12px;border-radius:8px;margin-bottom:16px}
-  .foot-brand p{font-size:15px;max-width:320px}
-  footer h4{font-family:'Barlow Condensed',sans-serif;color:#fff;font-size:20px;letter-spacing:1px;margin-bottom:16px;text-transform:uppercase}
-  footer ul{list-style:none}
-  footer ul li{margin-bottom:10px;font-size:15px}
-  footer ul li a:hover{color:var(--gold)}
-  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px}
-
-  @media(max-width:960px){
-    .about-grid,.contact-grid{grid-template-columns:1fr;gap:34px}
-    .svc-cols,.proj-grid,.steps{grid-template-columns:1fr 1fr}
-    .stats-grid{grid-template-columns:1fr 1fr;gap:40px}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .hero h1{font-size:52px}
-    .nav-links{display:none}
-    .menu-btn{display:block}
-    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:82px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);gap:18px}
-    .has-dd .dd{position:static;opacity:1;visibility:visible;transform:none;width:auto;grid-template-columns:1fr;gap:14px;box-shadow:none;border:0;padding:10px 0 0;margin-top:8px}
-    .has-dd>a::after{display:none}
-  }
-  @media(max-width:560px){
-    .svc-cols,.proj-grid,.steps,.stats-grid,.row2,.foot-grid{grid-template-columns:1fr}
-    .hero h1{font-size:42px}
-    .section-head h2,.about-copy h2,.contact-info h2{font-size:34px}
-    section{padding:60px 0}
-  }
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -195,24 +22,24 @@
         <div class="dd">
           <div class="dd-col">
             <h5>Construction &amp; Building</h5>
-            <a href="#services">Residential Construction</a>
-            <a href="#services">Commercial Construction</a>
-            <a href="#services">Custom Homes</a>
-            <a href="#services">Additions &amp; New Builds</a>
+            <a href="services/residential-construction.html">Residential Construction</a>
+            <a href="services/commercial-construction.html">Commercial Construction</a>
+            <a href="services/custom-homes.html">Custom Homes</a>
+            <a href="services/additions-new-builds.html">Additions &amp; New Builds</a>
           </div>
           <div class="dd-col">
             <h5>Remodel &amp; Renovation</h5>
-            <a href="#services">Kitchen Remodeling</a>
-            <a href="#services">Bathroom Remodeling</a>
-            <a href="#services">Whole-Home Renovations</a>
-            <a href="#services">Tenant Improvements</a>
+            <a href="services/kitchen-remodeling.html">Kitchen Remodeling</a>
+            <a href="services/bathroom-remodeling.html">Bathroom Remodeling</a>
+            <a href="services/whole-home-renovations.html">Whole-Home Renovations</a>
+            <a href="services/tenant-improvements.html">Tenant Improvements</a>
           </div>
           <div class="dd-col">
             <h5>Planning &amp; Delivery</h5>
-            <a href="#services">Design-Build</a>
-            <a href="#services">Project Management</a>
-            <a href="#services">Pre-Construction Planning</a>
-            <a href="#services">Permit Coordination</a>
+            <a href="services/design-build.html">Design-Build</a>
+            <a href="services/project-management.html">Project Management</a>
+            <a href="services/pre-construction-planning.html">Pre-Construction Planning</a>
+            <a href="services/permit-coordination.html">Permit Coordination</a>
           </div>
         </div>
       </div>
@@ -281,28 +108,28 @@
       <div class="svc-col">
         <h3>Construction &amp; Building</h3>
         <ul>
-          <li><a href="#contact">Residential Construction</a></li>
-          <li><a href="#contact">Commercial Construction</a></li>
-          <li><a href="#contact">Custom Homes</a></li>
-          <li><a href="#contact">Additions &amp; New Builds</a></li>
+          <li><a href="services/residential-construction.html">Residential Construction</a></li>
+          <li><a href="services/commercial-construction.html">Commercial Construction</a></li>
+          <li><a href="services/custom-homes.html">Custom Homes</a></li>
+          <li><a href="services/additions-new-builds.html">Additions &amp; New Builds</a></li>
         </ul>
       </div>
       <div class="svc-col">
         <h3>Remodeling &amp; Renovation</h3>
         <ul>
-          <li><a href="#contact">Kitchen Remodeling</a></li>
-          <li><a href="#contact">Bathroom Remodeling</a></li>
-          <li><a href="#contact">Whole-Home Renovations</a></li>
-          <li><a href="#contact">Tenant Improvements</a></li>
+          <li><a href="services/kitchen-remodeling.html">Kitchen Remodeling</a></li>
+          <li><a href="services/bathroom-remodeling.html">Bathroom Remodeling</a></li>
+          <li><a href="services/whole-home-renovations.html">Whole-Home Renovations</a></li>
+          <li><a href="services/tenant-improvements.html">Tenant Improvements</a></li>
         </ul>
       </div>
       <div class="svc-col">
         <h3>Planning, Permits &amp; Delivery</h3>
         <ul>
-          <li><a href="#contact">Design-Build</a></li>
-          <li><a href="#contact">Project Management</a></li>
-          <li><a href="#contact">Pre-Construction Planning</a></li>
-          <li><a href="#contact">Permit Coordination</a></li>
+          <li><a href="services/design-build.html">Design-Build</a></li>
+          <li><a href="services/project-management.html">Project Management</a></li>
+          <li><a href="services/pre-construction-planning.html">Pre-Construction Planning</a></li>
+          <li><a href="services/permit-coordination.html">Permit Coordination</a></li>
         </ul>
       </div>
     </div>
@@ -415,11 +242,11 @@
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Residential Construction</a></li>
-          <li><a href="#services">Commercial Construction</a></li>
-          <li><a href="#services">Remodeling</a></li>
-          <li><a href="#services">Renovation</a></li>
-          <li><a href="#services">Project Management</a></li>
+          <li><a href="services/residential-construction.html">Residential Construction</a></li>
+          <li><a href="services/commercial-construction.html">Commercial Construction</a></li>
+          <li><a href="services/kitchen-remodeling.html">Kitchen Remodeling</a></li>
+          <li><a href="services/whole-home-renovations.html">Whole-Home Renovations</a></li>
+          <li><a href="services/project-management.html">Project Management</a></li>
         </ul>
       </div>
       <div>
