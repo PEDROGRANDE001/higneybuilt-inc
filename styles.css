@@ -116,6 +116,11 @@
   .step h3{font-size:21px;color:var(--green);margin:6px 0 10px}
   .step p{color:var(--grey);font-size:15px}
 
+  /* Client logos */
+  .logos{padding:48px 0}
+  .logo-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:44px;margin-top:26px}
+  .logo-row img{height:52px;width:auto;object-fit:contain;border-radius:6px}
+
   /* Testimonials */
   .testi{background:var(--bg-soft)}
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
