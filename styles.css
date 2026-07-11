@@ -99,6 +99,12 @@
 
   /* Projects */
   .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .proj-marquee{margin-top:34px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .proj-track{display:flex;width:max-content;animation:proj-scroll 55s linear infinite}
+  .proj-track .proj{flex:0 0 380px;margin:0 13px}
+  .proj-marquee:hover .proj-track{animation-play-state:paused}
+  @keyframes proj-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.proj-track{animation:none}}
   .proj{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
   .proj .ph{height:250px;overflow:hidden}
   .proj .ph img{height:100%;width:100%;object-fit:cover;transition:.4s}
