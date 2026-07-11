@@ -78,12 +78,17 @@
 
   /* Services */
   .services{background:var(--bg-soft)}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-  .svc-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:34px 30px;transition:.25s}
-  .svc-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(20,45,28,.12);border-color:transparent}
-  .svc-icon{width:56px;height:56px;border-radius:12px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px}
-  .svc-card h3{font-size:23px;color:var(--ink);margin-bottom:10px}
-  .svc-card p{color:var(--grey);font-size:15.5px}
+  .svc-intro{max-width:760px;margin-bottom:48px}
+  .svc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;padding-bottom:56px;border-bottom:1px solid var(--line)}
+  .svc-col h3{font-size:24px;color:var(--green);margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--gold);display:inline-block}
+  .svc-col ul{list-style:none}
+  .svc-col ul li{margin-bottom:13px}
+  .svc-col ul li a{display:flex;align-items:center;gap:10px;font-size:16.5px;font-weight:500;color:var(--ink);transition:.15s}
+  .svc-col ul li a::before{content:"\203A";color:var(--gold);font-size:20px;font-weight:700;line-height:1}
+  .svc-col ul li a:hover{color:var(--green);padding-left:4px}
+  .svc-cta{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:52px;flex-wrap:wrap}
+  .svc-cta h3{font-size:34px;color:var(--green);max-width:560px}
+  .svc-cta .acts{display:flex;gap:14px;flex-wrap:wrap}
 
   /* Stats */
   .stats{background:var(--green-dark);color:#fff}
@@ -149,7 +154,7 @@
 
   @media(max-width:960px){
     .about-grid,.contact-grid{grid-template-columns:1fr;gap:34px}
-    .svc-grid,.proj-grid,.steps{grid-template-columns:1fr 1fr}
+    .svc-cols,.proj-grid,.steps{grid-template-columns:1fr 1fr}
     .stats-grid{grid-template-columns:1fr 1fr;gap:40px}
     .foot-grid{grid-template-columns:1fr 1fr}
     .hero h1{font-size:52px}
@@ -158,7 +163,7 @@
     .nav-links.open{display:flex;flex-direction:column;position:absolute;top:82px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);gap:18px}
   }
   @media(max-width:560px){
-    .svc-grid,.proj-grid,.steps,.stats-grid,.row2,.foot-grid{grid-template-columns:1fr}
+    .svc-cols,.proj-grid,.steps,.stats-grid,.row2,.foot-grid{grid-template-columns:1fr}
     .hero h1{font-size:42px}
     .section-head h2,.about-copy h2,.contact-info h2{font-size:34px}
     section{padding:60px 0}
@@ -229,18 +234,46 @@
 <!-- Services -->
 <section class="services" id="services">
   <div class="wrap">
-    <div class="section-head">
+    <div class="svc-intro">
       <div class="eyebrow">What We Do</div>
-      <h2>Comprehensive Construction Services</h2>
-      <p>A full-service general contractor handling every stage of your project under one roof.</p>
+      <h2 style="font-size:44px;color:var(--green)">Construction Services in the Greater Los Angeles Area</h2>
+      <p style="margin-top:16px;color:var(--grey);font-size:18px">Residential and commercial construction built around clarity and craftsmanship. From ground-up builds to detailed remodels, tenant improvements, and full project delivery, HigneyBuilt handles every stage across Los Angeles.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card"><div class="svc-icon">&#127968;</div><h3>Residential Construction</h3><p>Custom homes and additions built to the highest standard, tailored to how you live.</p></div>
-      <div class="svc-card"><div class="svc-icon">&#127970;</div><h3>Commercial Construction</h3><p>Offices, retail, and tenant improvements delivered with minimal disruption to your business.</p></div>
-      <div class="svc-card"><div class="svc-icon">&#128296;</div><h3>Remodeling Solutions</h3><p>Kitchens, baths, and full-home transformations that add function, value, and style.</p></div>
-      <div class="svc-card"><div class="svc-icon">&#10024;</div><h3>Renovation Services</h3><p>Modernize and restore existing structures while preserving what makes them special.</p></div>
-      <div class="svc-card"><div class="svc-icon">&#128203;</div><h3>Project Management</h3><p>Scheduling, permitting, and trade coordination handled end to end by our team.</p></div>
-      <div class="svc-card"><div class="svc-icon">&#127959;</div><h3>Tenant Improvements</h3><p>Build-outs and space planning that turn a shell or lease space into a working environment.</p></div>
+    <div class="svc-cols">
+      <div class="svc-col">
+        <h3>Construction &amp; Building</h3>
+        <ul>
+          <li><a href="#contact">Residential Construction</a></li>
+          <li><a href="#contact">Commercial Construction</a></li>
+          <li><a href="#contact">Custom Homes</a></li>
+          <li><a href="#contact">Additions &amp; New Builds</a></li>
+        </ul>
+      </div>
+      <div class="svc-col">
+        <h3>Remodeling &amp; Renovation</h3>
+        <ul>
+          <li><a href="#contact">Kitchen Remodeling</a></li>
+          <li><a href="#contact">Bathroom Remodeling</a></li>
+          <li><a href="#contact">Whole-Home Renovations</a></li>
+          <li><a href="#contact">Tenant Improvements</a></li>
+        </ul>
+      </div>
+      <div class="svc-col">
+        <h3>Planning, Permits &amp; Delivery</h3>
+        <ul>
+          <li><a href="#contact">Design-Build</a></li>
+          <li><a href="#contact">Project Management</a></li>
+          <li><a href="#contact">Pre-Construction Planning</a></li>
+          <li><a href="#contact">Permit Coordination</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-cta">
+      <h3>Ready to turn your vision into reality?</h3>
+      <div class="acts">
+        <a href="#contact" class="btn btn-dark">Request a Consultation</a>
+        <a href="tel:3104634922" class="btn btn-primary">Call (310) 463-4922</a>
+      </div>
     </div>
   </div>
 </section>
